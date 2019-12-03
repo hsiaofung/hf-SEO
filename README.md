@@ -1,6 +1,6 @@
 ## install
 
-yarn hf-SEO
+yarn hf-seo
 
 ## component
 
