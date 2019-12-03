@@ -1,7 +1,9 @@
 {
-  "name": "my-app",
+  "name": "hf-SEO",
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/index.js",
+  "author": "hfchou",
+  "license": "MIT",
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -12,7 +14,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "transpile": "babel src/SEO.js --out-file dist/index.js",
+    "prepublishOnly": "npm run transpile"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +32,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsiaofung/hf-SEO.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hsiaofung/hf-SEO/issues"
+  },
+  "homepage": "https://github.com/hsiaofung/hf-SEO#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6"
   }
 }
