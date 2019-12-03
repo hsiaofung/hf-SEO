@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## install
 
-## Available Scripts
+yarn hf-SEO
 
-In the project directory, you can run:
+## component
 
-### `yarn start`
+```javascript
+<SEO>
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## feature
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- 支援 meta title : title 分割成系列，商品，公司。
+- 支援 meta facebook。
 
-### `yarn test`
+## API
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- company : 公司名稱
+- collection: 系列名稱
+- product: 產品名稱
+- description: 產品描述
+- shareImg: 給 facebook 的 share image。
 
-### `yarn build`
+## Usage
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 直接叫用即可
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```javascript
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import SEO from "./SEO";
 
-### `yarn eject`
+const details = {
+  collectionName: "Cosmos",
+  productName: "18K黃金石英-硬玉戒指",
+  companyName: "點睛品(Chow Sang Sang Jewellery)官方網上珠寶店",
+  description:
+    "紫石英硬玉/ 紅紋石戒指能與系列其他半寶石戒指疊戴拼湊，Mix & Match好玩多變，為每日穿搭增添打造出有如浩瀚星宿的閃亮魅力。紫石英硬玉象徵意義:平安和順; 紅紋石象徵意義:熱烈的愛情",
+  shareImg: "../img/share.jpg"
+};
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+function App() {
+  return (
+    <div className="App">
+      <SEO
+        company={details.companyName}
+        collection={details.collectionName}
+        product={details.productName}
+        description={details.description}
+        shareImg={details.shareImg}
+      />
+    </div>
+  );
+}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+export default App;
+```
